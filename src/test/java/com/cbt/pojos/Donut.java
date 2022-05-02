@@ -14,7 +14,7 @@ public class Donut {
      */
 
     /*
-     @SerializedName("donutId") --> use this tag if you want to use differnet name in pojo
+     @SerializedName("donutId") --> use this tag if you want to use different name in pojo
      and different name in json
 
       @Expose--> use this if to control whether we want read/write selected values from/to json

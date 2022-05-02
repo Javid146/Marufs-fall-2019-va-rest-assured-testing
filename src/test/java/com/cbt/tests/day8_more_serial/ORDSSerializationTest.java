@@ -1,5 +1,4 @@
 package com.cbt.tests.day8_more_serial;
-
 import com.cbt.pojos.Employee;
 import com.cbt.pojos.Link;
 import com.cbt.pojos.Student;
@@ -26,17 +25,14 @@ public class ORDSSerializationTest {
     public static void setup(){
         RestAssured.baseURI= ConfigurationReader.getProperty("ords_base_url");
 
-//        // pre configure the rest assured to use the custom Gson object mapper
-//        ObjectMapperConfig config = new ObjectMapperConfig(ObjectMapperType.GSON)
-//                .gsonObjectMapperFactory(
-//                        (type, s) -> new GsonBuilder()
-//                                .setPrettyPrinting()
-//                                .create());
-//        RestAssured.config = RestAssuredConfig.config().objectMapperConfig(config);
-
+        // pre configure the rest assured to use the custom Gson object mapper
+        ObjectMapperConfig config = new ObjectMapperConfig(ObjectMapperType.GSON)
+                .gsonObjectMapperFactory(
+                        (type, s) -> new GsonBuilder().setPrettyPrinting().create());
+        RestAssured.config = RestAssuredConfig.config().objectMapperConfig(config);
     }
 
-    @Test
+//    @Test
     public void getSteven(){
         Response response = given().
                 pathParam("id", 100).
@@ -46,36 +42,27 @@ public class ORDSSerializationTest {
 
         response.then().
                 statusCode(200);
-
-        // // this it used the default. deafult is whatever we have in the pom file
-        // what if we have both gson and jackson-databind the pom file, then it prefers jackson over gson accroding to docs
+        // // this it used the default. default is whatever we have in the pom file
+        // what if we have both gson and jackson-databind the pom file, then it prefers jackson over gson according to docs///////////////////////////////////////////////
         Employee employee = response.as(Employee.class);
-
         // We can tell rest assured to explicitly use GSON over others.
         // in the as method add second optional parameter to specify the mapper type
 //        Employee employee = response.as(Employee.class, ObjectMapperType.GSON);
         System.out.println(employee);
-
         List<Link> links = employee.getLinks();
-        System.out.println(links);
-    }
+        System.out.println(links); }
 
 
-    @Test
+//    @Test
     public void getAaaaalOfTheEmployees(){
-
         Response response = when().get("employees");
-
         response.then().statusCode(200);
 
-        List<Employee> items = response.jsonPath().getList("items", Employee.class);
-
+        List<Employee> items = response.jsonPath().getList("items", Employee.class);//////////////////////////////////////////
         System.out.println("Number of employees = " + items.size());
 
         Employee firstEmlpoyee = items.get(0);
-        System.out.println("firstEmlpoyee = " + firstEmlpoyee.getFirstName());
-    }
-}
+        System.out.println("firstEmlpoyee = " + firstEmlpoyee.getFirstName()); }}
 
 
 //Student

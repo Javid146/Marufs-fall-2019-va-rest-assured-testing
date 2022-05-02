@@ -1,11 +1,9 @@
 package com.cbt.tests.office_hours;
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
 public class StatusCodeAndContentTypeTests {
-
     /**
      * TC 01
      * make a get request to https://api.github.com/users/cybertekschool
@@ -20,10 +18,7 @@ public class StatusCodeAndContentTypeTests {
                          prettyPeek().
                 then().statusCode(200).
                         contentType(ContentType.JSON).
-                        header("server", "GitHub.com");
-    }
-
-
+                        header("server", "GitHub.com"); }
     /**
      * TC 02
      * make a get request to https://google.com
@@ -36,7 +31,4 @@ public class StatusCodeAndContentTypeTests {
             when().get("https://google.com").
                 prettyPeek().
             then().assertThat().statusCode(200).
-                and().contentType(ContentType.HTML);
-    }
-
-}
+                and().contentType(ContentType.HTML); }}

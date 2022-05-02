@@ -1,5 +1,4 @@
 package com.cbt.tests.day8_more_serial;
-
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -22,10 +21,5 @@ public class UINamesExercise {
                 prettyPeek().
         then().
                 statusCode(200).
-                body("region", is("Mexico")).
-                body("name", not(emptyOrNullString()));
-
-    }
-
-
-}
+                body("region", is("Mexico")).////////////////////////////////
+                body("name", not(emptyOrNullString())); }}////////////////////////

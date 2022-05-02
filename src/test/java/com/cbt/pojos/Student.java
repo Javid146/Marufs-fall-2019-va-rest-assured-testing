@@ -25,27 +25,6 @@ public class Student {
 
     private String section;
 
-    private int studentId;
-
-    private String subject;
-
-    public Student(String admissionNo, int batch, String birthDate, Company company, Contact contact, String firstName, String gender, String joinDate, String lastName, String major, String password, String section, int studentId, String subject) {
-        this.admissionNo = admissionNo;
-        this.batch = batch;
-        this.birthDate = birthDate;
-        this.company = company;
-        this.contact = contact;
-        this.firstName = firstName;
-        this.gender = gender;
-        this.joinDate = joinDate;
-        this.lastName = lastName;
-        this.major = major;
-        this.password = password;
-        this.section = section;
-        this.studentId = studentId;
-        this.subject = subject;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -64,6 +43,29 @@ public class Student {
                 ", studentId=" + studentId +
                 ", subject='" + subject + '\'' +
                 '}';
+    }
+
+    private int studentId;
+
+    private String subject;
+
+
+
+    public Student(int batch,  String joinDate, String birthDate, String password, String subject,  String gender, String admissionNo, String major, String section, Company company, Contact contact, String firstName, String lastName, int studentId) {
+        this.admissionNo = admissionNo;
+        this.batch = batch;
+        this.birthDate = birthDate;
+        this.company = company;
+        this.contact = contact;
+        this.firstName = firstName;
+        this.gender = gender;
+        this.joinDate = joinDate;
+        this.lastName = lastName;
+        this.major = major;
+        this.password = password;
+        this.section = section;
+        this.studentId = studentId;
+        this.subject = subject;
     }
 
     public void setAdmissionNo(String admissionNo) {

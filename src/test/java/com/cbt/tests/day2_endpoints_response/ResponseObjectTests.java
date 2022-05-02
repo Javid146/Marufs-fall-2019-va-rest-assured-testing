@@ -1,5 +1,4 @@
 package com.cbt.tests.day2_endpoints_response;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,7 +10,6 @@ import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 public class ResponseObjectTests {
 
-
     @BeforeAll
     public static void setUp(){
         RestAssured.baseURI = "http://api.cybertektraining.com";
@@ -20,30 +18,22 @@ public class ResponseObjectTests {
     @Test
     public void verifyStudentInformation(){
         // response -> represents the response that we get from the server
-        Response response = when().get("/student/10662");
+        Response response = when().get("/students/24668");
 
         System.out.println(response.statusLine());
         System.out.println(response.statusCode());
         System.out.println(response.header("Content-Type"));
         System.out.println(response.headers());
 
-
         response.print();
         // verify status
         response.then().statusCode(200);
         // verify response contains Vera
         String resString = response.asString();
-        assertThat(resString, containsString("Vera"));
-
-    }
-
+        assertThat(resString, containsString("John")); }
 
     @Test
     public void verifyTeacherInformation(){
             Response response = get("/teachers/4712");
             response.prettyPrint();
-
-            assertThat(response.asString(), containsString("Darleen"));
-        }
-
-}
+            assertThat(response.asString(), containsString("Darleen")); }}

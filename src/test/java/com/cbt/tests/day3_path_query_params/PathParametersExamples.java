@@ -1,5 +1,4 @@
 package com.cbt.tests.day3_path_query_params;
-
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ public class PathParametersExamples {
     public static void setUp(){
         RestAssured.baseURI = "http://api.cybertektraining.com";
     }
-
     /**
      * make a get request to /student/:id and get single student information
      * provide the path parameters
@@ -23,26 +21,20 @@ public class PathParametersExamples {
     public void testVasylFromIndia(){
         given().
                 log().all().
-                pathParam("id", 10521).
+                pathParam("id", 24661).
         when().
-                get("/student/{id}").
+                get("/students/{id}").
                 prettyPeek().
-        then().statusCode(200);
-    }
-
+        then().statusCode(200); }
     /**
      * same test as above but with a different id
      */
     @Test
-    public void testVera(){
+    public void testJohn(){
         given().
                 log().all().
-                pathParam("id", 10662).
+                pathParam("id", 24682).
         when().
                 get("student/{id}").
                 prettyPeek().
-        then().statusCode(200);
-    }
-
-}
-// 7.26
+        then().statusCode(200); }}

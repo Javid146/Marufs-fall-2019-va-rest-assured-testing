@@ -1,5 +1,4 @@
 package com.cbt.tests.day11_cookie_and_extent_report;
-
 import com.cbt.utilities.ExtentConfig;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
@@ -14,10 +13,6 @@ import static org.hamcrest.Matchers.not;
 @ExtendWith(ExtentConfig.class)
 public class CookieTests {
 
-    /*
-    login to zero bank app using form params
-        user_login: username and user_password: password
-     */
     @DisplayName("Get a cookie and access the reports using cookie")
     @Test
     public void getCookieTest() {
@@ -38,8 +33,7 @@ public class CookieTests {
         System.out.println("cookie.getName() = " + cookie.getName());
         System.out.println("cookie.getValue() = " + cookie.getValue());
 
-        // ACCESS THE APP USING THE COOKIE
-        // send the request with cookie attached
+        // ACCESS THE APP USING THE COOKIE // send the request with cookie attached
         given().
                 cookie(cookie).
                 when().
@@ -47,8 +41,7 @@ public class CookieTests {
                 prettyPeek().
                 then().
                 statusCode(200).
-                body(not(containsString("login")));
-    }
+                body(not(containsString("login")));}
 
     @DisplayName("Make your own a cookie and access the reports using cookie")
     @Test
@@ -56,7 +49,7 @@ public class CookieTests {
         // MAKE A COOKIE
         // cookies expire so if this does nto work that means you need to change the cookie value
         // you can get the cookie value from the output of the previous example  on top
-        Cookie cookie = new Cookie.Builder("JSESSIONID", "4CB3F51A").build();
+        Cookie cookie = new Cookie.Builder("JSESSIONID", "3899A142").build();
         ExtentConfig.test.info("Cookie: " + cookie.toString());
         // ACCESS THE APP USING THE COOKIE
         given().

@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://example.com/example.json",
+  "$id": "http://example.com/example.json#//required",
   "type": "object",
   "title": "The root schema",
   "description": "The root schema comprises the entire JSON document.",
   "default": {},
   "examples": [
     {
-      "id": 4,
-      "name": "John ABC",
-      "gender": "Female",
-      "phone": 3786741487
+      "id": 44,
+      "name": "Panchito",
+      "gender": "Male",
+      "phone": 7486765293
     }
   ],
   "required": [
@@ -19,7 +19,6 @@
     "gender",
     "phone"
   ],
-  "additionalProperties": true,
   "properties": {
     "id": {
       "$id": "#/properties/id",
@@ -28,7 +27,7 @@
       "description": "An explanation about the purpose of this instance.",
       "default": 0,
       "examples": [
-        4
+        44
       ]
     },
     "name": {
@@ -38,7 +37,7 @@
       "description": "An explanation about the purpose of this instance.",
       "default": "",
       "examples": [
-        "John ABC"
+        "Panchito"
       ]
     },
     "gender": {
@@ -48,7 +47,7 @@
       "description": "An explanation about the purpose of this instance.",
       "default": "",
       "examples": [
-        "Female"
+        "Male"
       ]
     },
     "phone": {
@@ -58,8 +57,9 @@
       "description": "An explanation about the purpose of this instance.",
       "default": 0,
       "examples": [
-        3786741487
+        7486765293
       ]
     }
-  }
+  },
+  "additionalProperties": true
 }

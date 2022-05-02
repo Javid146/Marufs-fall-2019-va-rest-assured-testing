@@ -1,5 +1,4 @@
 package com.cbt.tests.office_hours;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,8 +9,7 @@ public class CalculatorTests {
     public void addTests() {
         int actual = Calculator.add(1, 1);
         int expected = 2;
-        assertEquals(expected, actual);
-    }
+        assertEquals(expected, actual); }
 
     @Test
     public void multiplyTests() {
@@ -32,7 +30,4 @@ public class CalculatorTests {
     public void testDivide(){
         assertEquals(2, Calculator.divide(10,5));
         assertEquals(0, Calculator.divide(10,0));
-        assertNotEquals(10, Calculator.divide(10,0));
-    }
-
-}
+        assertNotEquals(10, Calculator.divide(10,0)); }}

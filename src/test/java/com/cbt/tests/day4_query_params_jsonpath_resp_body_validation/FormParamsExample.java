@@ -1,5 +1,4 @@
 package com.cbt.tests.day4_query_params_jsonpath_resp_body_validation;
-
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +13,7 @@ public class FormParamsExample {
 
     @Test
     public void testLogin(){
-        RestAssured.baseURI="http://library2.cybertekschool.com/rest/v1";
+        RestAssured.baseURI="https://library2.cybertekschool.com/rest/v1";
         given().
                 log().all().
                 formParam("email", "librarian16@library").
@@ -22,6 +21,6 @@ public class FormParamsExample {
         when().
                 post("/login").
                 prettyPeek().
-        then().statusCode(200);
+        then().statusCode(404);
     }
 }

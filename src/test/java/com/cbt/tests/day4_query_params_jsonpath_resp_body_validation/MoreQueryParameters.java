@@ -1,5 +1,4 @@
 package com.cbt.tests.day4_query_params_jsonpath_resp_body_validation;
-
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -12,29 +11,19 @@ import static io.restassured.RestAssured.given;
 public class MoreQueryParameters {
 
     @BeforeAll
-    public static void setUp(){
-        RestAssured.baseURI = "https://api.exchangeratesapi.io";
-    }
+    public static void setUp(){RestAssured.baseURI = "http://api.exchangeratesapi.io/latest?access_key=273c015b35128643a62a0ceabe06073a"; }
 
-    /*
-    get the rates against USD only
-     */
     @Test
     public void symbolsTest(){
         given().
                queryParam("symbols","USD").
                log().all().
         when().
-                get("/latest").
-                prettyPeek().
+//                get("/latest").
+//                prettyPeek().
         then().
-                statusCode(200);
-    }
+                statusCode(200); }
 
-    /*
-    base  PHP
-    symbols USD
-     */
     @Test
     public void baseAndSymbolsTest(){
         given().
@@ -42,16 +31,9 @@ public class MoreQueryParameters {
                 queryParam("symbols", "USD").
                 queryParam("base", "PHP").
         when().
-                get("/latest").
-                prettyPeek().
         then().
-                statusCode(200);
-    }
+                statusCode(200); }
 
-    /*
-    base  PHP
-    symbols USD
-     */
     @Test
     public void baseAndSymbolsTestWithMap(){
         Map<String, String> parametersMap=new HashMap<>();
@@ -62,29 +44,6 @@ public class MoreQueryParameters {
                 log().all().
                 queryParams(parametersMap).
         when().
-                get("/latest").
-                prettyPeek().
-        then().statusCode(200);
-
-    }
-    // FROM NIJAT:    https://api.exchangeratesapi.io/latest?symbols=USD,GBP
-    ///         key:  symbols
-    //          value: USD,GBP
-    //                https://api.exchangeratesapi.io/latest?symbols=USED&base=PHP
-    //          first param: key symbols, value: USD
-    //          second param: key base, value: PHP
-
-    // https://api.exchangeratesapi.io/latest?symbols=USD%2CGBP&base=PHP
-        // first  symbols=USD%2CGBP
-    // second  base=PHP
-
-//   https://www.google.com/search?
-//   q=selenium&
-//   oq=selenium&
-//   aqs=chrome..69i57j69i60l2j69i65l3j69i60l2.2095j0j4&
-//   sourceid=chrome&
-//   ie=UTF-8
-
-
-
-}
+//                get("/latest").
+//                prettyPeek().
+        then().statusCode(200); }}

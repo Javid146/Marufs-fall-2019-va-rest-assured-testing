@@ -1,5 +1,5 @@
 package com.cbt.tests.day9_schema_validation_more_api_tests;
-
+import com.cbt.pojos.Student;
 import com.cbt.utilities.AuthenticationUtility;
 import com.cbt.utilities.ConfigurationReader;
 import com.cbt.utilities.LibraryUserUtility;
@@ -18,24 +18,21 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class LibraryCreateUserTests {
-    /*
-    1. Student should not be able to create users
+    /*1. Student should not be able to create users
     2. Librarian should not be able create admin users
     3. Librarian should be able create librarian users
     4. Librarian should be able create student users
     5. Librarian should not be able create users with wrong group id
     6. Librarian should not be able create users with wrong status
-    7. Librarian should not be able create users with missing fields
-     */
+    7. Librarian should not be able create users with missing fields*/
 
     // RequestSpecification --> object that represents api request, just like Response class represents api response
-    static RequestSpecification request;
+    static RequestSpecification request;///////////////////////////////////////////////////////////////////////////////////////////////////////////
     @BeforeAll
     public static void setup(){
         RestAssured.baseURI = ConfigurationReader.getProperty("library1_base_url");
         String token = AuthenticationUtility.getLibrarianToken();
-        request = given().header("x-library-token", token).log().all();
-    }
+        request = given().header("x-library-token", token).log().all(); }
 
     @Test
     @DisplayName("Librarians cannot create admins")
@@ -45,11 +42,9 @@ public class LibraryCreateUserTests {
         when().
                 post("add_user").prettyPeek().
         then().
-//                statusCode(403).
+                statusCode(403).
                 contentType(ContentType.JSON).
-                body("error", is("You do not add/edit admins."));
-
-    }
+                body("error", is("You do not add/edit admins.")); }
 
     @Test
     @DisplayName("Librarian should not be able create users with wrong group id")
@@ -67,8 +62,7 @@ public class LibraryCreateUserTests {
                 post("add_user").prettyPeek().
         then().
                 statusCode(500).
-                contentType(ContentType.JSON);
-    }
+                contentType(ContentType.JSON);}
 
     @Test
     @DisplayName("Librarian should not be able create users with wrong status")
@@ -86,8 +80,7 @@ public class LibraryCreateUserTests {
                 post("add_user").prettyPeek().
         then().
                 statusCode(not(200)).
-                contentType(ContentType.JSON);
-    }
+                contentType(ContentType.JSON);}
 
 
     @Test
@@ -102,8 +95,7 @@ public class LibraryCreateUserTests {
                 statusCode(200).
                 contentType(ContentType.JSON).
                 body("message", is("The user has been created.")).
-                body("user_id", not(emptyOrNullString()));
-    }
+                body("user_id", not(emptyOrNullString())); }
 
     @Test
     @DisplayName("Create, get, update and get again")
@@ -140,6 +132,4 @@ public class LibraryCreateUserTests {
         when().
                 patch("update_user").prettyPeek().
         then().
-                statusCode(200);
-    }
-}
+                statusCode(200); }}

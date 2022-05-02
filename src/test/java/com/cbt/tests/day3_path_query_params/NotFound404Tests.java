@@ -1,5 +1,4 @@
 package com.cbt.tests.day3_path_query_params;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,12 +14,6 @@ public class NotFound404Tests {
         RestAssured.baseURI = "http://api.cybertektraining.com";
     }
 
-    /*
-    make a request to student endoint
-    provide no existing id as a parameter
-    verify status 404
-    verify response contains Student with id =  NOT FOUND!
-     */
     @Test
     public void verifyErrorMessageAnd404(){
         Response response = given().
@@ -30,8 +23,7 @@ public class NotFound404Tests {
         System.out.println(response.statusCode());
         System.out.println(response.asString());
         response.then().statusCode(404);
-        assertThat(response.asString(), containsString("NOT FOUND!"));
-    }
+        assertThat(response.asString(), containsString("NOT FOUND!")); }
 
     @Test
     public void test404(){
@@ -40,7 +32,4 @@ public class NotFound404Tests {
         when().
                 get("/student/{id}").
         then().
-                statusCode(404);
-    }
-
-}
+                statusCode(404); }}

@@ -1,16 +1,20 @@
-package com.cbt.pojos;
+package com.cbt.tests.Tests_from_API_shorts;
 
 public class Spartan {
-
     private int id;
     private String name;
     private String gender;
-    private String phone;
+    private Long phone;
 
-    public Spartan(String name, String gender, String phone) {
+    public Spartan(){}
+
+    //constructor
+    public Spartan(int id, String name, String gender, Long phone) {
+        this.id = id;
         this.name = name;
         this.gender = gender;
-        this.phone = phone; }
+        this.phone = phone;
+    }
 
     @Override
     public String toString() {
@@ -46,11 +50,15 @@ public class Spartan {
         this.gender = gender;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
+
+
 }
+
+

@@ -1,5 +1,4 @@
 package com.cbt.tests.day12_could_be_last_day;
-
 import com.cbt.pojos.Spartan;
 import com.cbt.utilities.AuthenticationUtility;
 import com.cbt.utilities.ConfigurationReader;
@@ -16,7 +15,6 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
 public class PatchVsPutExample {
-
     /**
      * CRUD --> create, read,   update,     delete
      * SQL -->  insert, select, update,     delete
@@ -58,8 +56,6 @@ public class PatchVsPutExample {
         String phone = faker.number().digits(10);
         Spartan spartan = new Spartan(name, gender, phone);
 
-        // create new spartan, verify 201, save id
-
         Response postResponse =
                 given().
                         log().all().
@@ -72,7 +68,6 @@ public class PatchVsPutExample {
 
         int id = postResponse.path("data.id");
         System.out.println("id = " + id);
-
         // get the spartan information using the id
         Response getResponse = given().
                 auth().basic("admin", "admin").
@@ -80,7 +75,6 @@ public class PatchVsPutExample {
                 when().
                 get("api/spartans/{id}").prettyPeek();
         getResponse.then().statusCode(200);
-
         // UPDATE spartan info
         spartan.setName(faker.name().fullName());
 
@@ -89,37 +83,27 @@ public class PatchVsPutExample {
                 pathParam("id", id).
                 contentType(ContentType.JSON).
             body(spartan).
-                when().
-                put("/api/spartans/{id}").prettyPeek().
-            then().
-                statusCode(204);
-        // GET THE SPARTAN'S NEW INFORMATION
+                when().put("/api/spartans/{id}").prettyPeek().
+            then().statusCode(204);
 
         getResponse = given().
                 auth().basic("admin", "admin").
                 pathParam("id", id).
                 when().
                 get("api/spartans/{id}").prettyPeek();
-        getResponse.then().statusCode(200);
-
-    }
-
+        getResponse.then().statusCode(200); }
 
     @Test
     public void patch(){
-        // GET BOOK INFO
         RestAssured.baseURI = ConfigurationReader.getProperty("library1_base_url");
 
         String token = AuthenticationUtility.getLibrarianToken();
-        String id = "200";
-        given().
-            header("x-library-token", token).
+        String id = "1";
+        given().header("x-library-token", token).
             pathParam("id", id).
-        when().
-                get("get_book_by_id/{id}").
+        when().get("get_book_by_id/{id}").
                 prettyPeek().
-        then().
-                statusCode(200);
+        then().statusCode(200);
 
         // UPDATE USING PATCH
         Map<String, String> bookInfo = new HashMap<>();
@@ -127,25 +111,16 @@ public class PatchVsPutExample {
         bookInfo.put("name", new Faker().name().fullName());
         System.out.println("bookInfo = " + bookInfo);
 
-        given().
-                header("x-library-token", token).
+        given().header("x-library-token", token).
                 contentType(ContentType.JSON).
                 body(bookInfo).
                 log().all().
-        when().
-                patch("update_book").
+        when().patch("update_book").
                 prettyPeek().
-        then().
-                statusCode(200);
+        then().statusCode(200);
         // GET AGAIN
-        given().
-                header("x-library-token", token).
+        given().header("x-library-token", token).
                 pathParam("id", id).
-        when().
-                get("get_book_by_id/{id}").
+        when().get("get_book_by_id/{id}").
                 prettyPeek().
-        then().
-                statusCode(200);
-
-    }
-}
+        then().statusCode(200); }}
