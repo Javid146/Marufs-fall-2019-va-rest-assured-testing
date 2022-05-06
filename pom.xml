@@ -56,6 +56,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <!--extentreports, junit-jupiter-engine, junit-platform-runner dependencies below are used for extent report-->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
