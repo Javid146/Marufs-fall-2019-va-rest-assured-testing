@@ -1,7 +1,5 @@
 package com.cbt.pojos;
-
 import java.util.List;
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Employee {
@@ -65,7 +63,8 @@ public class Employee {
      * @param email
      * @param commissionPct
      */
-    public Employee(int employeeId, String firstName, String lastName, String email, String phoneNumber, String hireDate, String jobId, int salary, Object commissionPct, Object managerId, int departmentId, List<Link> links) {
+    public Employee(int employeeId, String firstName, String lastName, String email, String phoneNumber, String hireDate,
+                    String jobId, int salary, Object commissionPct, Object managerId, int departmentId, List<Link> links){
         super();
         this.employeeId = employeeId;
         this.firstName = firstName;

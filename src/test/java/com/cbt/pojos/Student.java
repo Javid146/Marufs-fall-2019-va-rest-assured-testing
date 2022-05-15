@@ -2,28 +2,19 @@ package com.cbt.pojos;
 
 public class Student {
     private String admissionNo;
-
     private int batch;
-
     private String birthDate;
-
     private Company company;
-
     private Contact contact;
-
     private String firstName;
-
     private String gender;
-
     private String joinDate;
-
     private String lastName;
-
     private String major;
-
     private String password;
-
     private String section;
+    private int studentId;
+    private String subject;
 
     @Override
     public String toString() {
@@ -42,13 +33,7 @@ public class Student {
                 ", section='" + section + '\'' +
                 ", studentId=" + studentId +
                 ", subject='" + subject + '\'' +
-                '}';
-    }
-
-    private int studentId;
-
-    private String subject;
-
+                '}'; }
 
 
     public Student(int batch,  String joinDate, String birthDate, String password, String subject,  String gender, String admissionNo, String major, String section, Company company, Contact contact, String firstName, String lastName, int studentId) {
@@ -65,13 +50,11 @@ public class Student {
         this.password = password;
         this.section = section;
         this.studentId = studentId;
-        this.subject = subject;
-    }
+        this.subject = subject; }
 
     public void setAdmissionNo(String admissionNo) {
         this.admissionNo = admissionNo;
     }
-
     public String getAdmissionNo() {
         return this.admissionNo;
     }
@@ -79,7 +62,6 @@ public class Student {
     public void setBatch(int batch) {
         this.batch = batch;
     }
-
     public int getBatch() {
         return this.batch;
     }
@@ -87,7 +69,6 @@ public class Student {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-
     public String getBirthDate() {
         return this.birthDate;
     }
@@ -95,7 +76,6 @@ public class Student {
     public void setCompany(Company company) {
         this.company = company;
     }
-
     public Company getCompany() {
         return this.company;
     }
@@ -103,7 +83,6 @@ public class Student {
     public void setContact(Contact contact) {
         this.contact = contact;
     }
-
     public Contact getContact() {
         return this.contact;
     }
@@ -111,7 +90,6 @@ public class Student {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getFirstName() {
         return this.firstName;
     }
@@ -119,7 +97,6 @@ public class Student {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
     public String getGender() {
         return this.gender;
     }
@@ -127,7 +104,6 @@ public class Student {
     public void setJoinDate(String joinDate) {
         this.joinDate = joinDate;
     }
-
     public String getJoinDate() {
         return this.joinDate;
     }
@@ -135,7 +111,6 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getLastName() {
         return this.lastName;
     }
@@ -143,7 +118,6 @@ public class Student {
     public void setMajor(String major) {
         this.major = major;
     }
-
     public String getMajor() {
         return this.major;
     }
@@ -151,7 +125,6 @@ public class Student {
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getPassword() {
         return this.password;
     }
@@ -159,7 +132,6 @@ public class Student {
     public void setSection(String section) {
         this.section = section;
     }
-
     public String getSection() {
         return this.section;
     }
@@ -167,7 +139,6 @@ public class Student {
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
-
     public int getStudentId() {
         return this.studentId;
     }
@@ -175,8 +146,6 @@ public class Student {
     public void setSubject(String subject) {
         this.subject = subject;
     }
-
     public String getSubject() {
         return this.subject;
-    }
-}
+    }}

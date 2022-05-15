@@ -13,13 +13,11 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", doors=" + doors +
                 ", price=" + price +
-                '}';
-    }
+                '}'; }
 
     public String getMake() {
         return make;
     }
-
     public void setMake(String make) {
         this.make = make;
     }
@@ -27,7 +25,6 @@ public class Car {
     public String getModel() {
         return model;
     }
-
     public void setModel(String model) {
         this.model = model;
     }
@@ -35,7 +32,6 @@ public class Car {
     public int getDoors() {
         return doors;
     }
-
     public void setDoors(int doors) {
         this.doors = doors;
     }
@@ -43,7 +39,6 @@ public class Car {
     public int getPrice() {
         return price;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
@@ -53,6 +48,4 @@ public class Car {
         this.make = make;
         this.model = model;
         this.doors = doors;
-        this.price = price;
-    }
-}
+        this.price = price; }}

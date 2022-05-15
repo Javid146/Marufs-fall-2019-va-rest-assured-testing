@@ -60,7 +60,4 @@ public class CookieTests {
                 then().
                 statusCode(200).
                 body(not(containsString("login")));
-        ExtentConfig.test.info("done");
-    }
-
-}
+                ExtentConfig.test.info("done"); }}

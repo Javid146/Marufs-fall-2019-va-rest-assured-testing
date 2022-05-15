@@ -26,7 +26,7 @@ public class WriteReadExamples {
         fileWriter.close(); }
 
     @Test
-    public void readFromJsonFile() throws FileNotFoundException {
+    public void readFromJsonFile() throws Exception {
         // read from file
         FileReader fileReader = new FileReader("src/test/resources/old_donut.json");
         // convert to object using gson

@@ -1,19 +1,17 @@
 package com.cbt.pojos;
+
 public class Contact {
+
     private int contactId;
-
     private String emailAddress;
-
     private String phone;
-
     private String premanentAddress;
 
     public Contact(int contactId, String emailAddress, String phone, String premanentAddress) {
         this.contactId = contactId;
         this.emailAddress = emailAddress;
         this.phone = phone;
-        this.premanentAddress = premanentAddress;
-    }
+        this.premanentAddress = premanentAddress; }
 
     @Override
     public String toString() {
@@ -22,8 +20,7 @@ public class Contact {
                 ", emailAddress='" + emailAddress + '\'' +
                 ", phone='" + phone + '\'' +
                 ", premanentAddress='" + premanentAddress + '\'' +
-                '}';
-    }
+                '}'; }
 
     public void setContactId(int contactId){
         this.contactId = contactId;
@@ -48,6 +45,5 @@ public class Contact {
     }
     public String getPremanentAddress(){
         return this.premanentAddress;
-    }
-}
+    }}
 

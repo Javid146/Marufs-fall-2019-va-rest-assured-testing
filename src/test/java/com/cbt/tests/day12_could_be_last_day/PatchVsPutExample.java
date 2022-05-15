@@ -61,7 +61,7 @@ public class PatchVsPutExample {
                         log().all().
                         auth().basic("admin", "admin").
                         contentType(ContentType.JSON).
-                        body(spartan).
+                        body(spartan).//////////////////////////////////////////////////////////////////////////////////
                         when().
                         post("/api/spartans").prettyPeek();
         postResponse.then().statusCode(201).and().body("success", is("A Spartan is Born!"));

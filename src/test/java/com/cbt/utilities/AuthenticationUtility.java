@@ -15,7 +15,7 @@ public class AuthenticationUtility {
                     formParam("password", password).
                 when().
                     post("login").prettyPeek();
-        response.then().statusCode(200);
+                response.then().statusCode(200);
 
         return response.jsonPath().getString("token");////////////////////////////////////////////////////////
 

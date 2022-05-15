@@ -22,5 +22,5 @@ public class day5practice {
                 post("/add_book").
                 prettyPeek().
                 then().
-                statusCode(403);//403 means unathorized
+                statusCode(403);//403 means unauthorized
     }}

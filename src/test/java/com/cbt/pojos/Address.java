@@ -1,15 +1,10 @@
-
 package com.cbt.pojos;
 
 public class Address {
     private int addressId;
-
     private String city;
-
     private String state;
-
     private String street;
-
     private int zipCode;
 
     public Address(int addressId, String city, String state, String street, int zipCode) {
@@ -17,8 +12,7 @@ public class Address {
         this.city = city;
         this.state = state;
         this.street = street;
-        this.zipCode = zipCode;
-    }
+        this.zipCode = zipCode; }
 
     @Override
     public String toString() {
@@ -28,13 +22,11 @@ public class Address {
                 ", state='" + state + '\'' +
                 ", street='" + street + '\'' +
                 ", zipCode=" + zipCode +
-                '}';
-    }
+                '}'; }
 
     public void setAddressId(int addressId) {
         this.addressId = addressId;
     }
-
     public int getAddressId() {
         return this.addressId;
     }
@@ -42,7 +34,6 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
-
     public String getCity() {
         return this.city;
     }
@@ -50,7 +41,6 @@ public class Address {
     public void setState(String state) {
         this.state = state;
     }
-
     public String getState() {
         return this.state;
     }
@@ -58,7 +48,6 @@ public class Address {
     public void setStreet(String street) {
         this.street = street;
     }
-
     public String getStreet() {
         return this.street;
     }
@@ -66,11 +55,9 @@ public class Address {
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
-
     public int getZipCode() {
         return this.zipCode;
-    }
-}
+    }}
 
 
 

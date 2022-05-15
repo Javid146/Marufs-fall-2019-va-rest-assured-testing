@@ -7,7 +7,7 @@ import org.junit.platform.suite.api.SuiteDisplayName;
 import org.junit.runner.RunWith;
 
 /*// we need extentreports, junit-jupiter-engine, junit-platform-runner dependencies to run tests with JUNIT
-//if you want to run tests with MAVEN add maven-surefire dependency and add name of this class in pom file, inside of that dependency like below:
+//if you want to run tests with MAVEN add maven-surefire plugin and add name of this class in pom file, inside of that dependency like below:
                                /*git <plugin>
                                 <groupId>org.apache.maven.plugins</groupId>
                              <artifactId>maven-surefire-plugin</artifactId>

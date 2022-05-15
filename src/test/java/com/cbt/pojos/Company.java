@@ -1,13 +1,10 @@
 package com.cbt.pojos;
+
 public class Company {
     private Address address;
-
     private int companyId;
-
     private String companyName;
-
     private String startDate;
-
     private String title;
 
     public Company(Address address, int companyId, String companyName, String startDate, String title) {
@@ -15,8 +12,7 @@ public class Company {
         this.companyId = companyId;
         this.companyName = companyName;
         this.startDate = startDate;
-        this.title = title;
-    }
+        this.title = title; }
 
     @Override
     public String toString() {
@@ -26,8 +22,7 @@ public class Company {
                 ", companyName='" + companyName + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", title='" + title + '\'' +
-                '}';
-    }
+                '}'; }
 
     public void setAddress(Address address){
         this.address = address;
@@ -58,6 +53,5 @@ public class Company {
     }
     public String getTitle(){
         return this.title;
-    }
-}
+    }}
 
